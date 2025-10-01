@@ -29,7 +29,7 @@ import {
   getInitials,
 } from "@/lib/utils";
 import { FarmWithTopCrop } from "@/mock";
-import RefreshButton from "@/app/farms/[id]/components/FarmDetails/RefreshButton";
+import Actions from "@/app/farms/[id]/components/FarmDetails/Actions";
 
 interface FarmDetailsProps {
   farmId: string;
@@ -81,9 +81,7 @@ export default async function FarmDetails({ farmId }: FarmDetailsProps) {
 
   return (
     <div className="@container/main flex flex-1 flex-col gap-2 px-4">
-      <div className="flex justify-end">
-        <RefreshButton farmId={farmId} />
-      </div>
+      <Actions farmId={farmId} />
       <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
         {/* Farm Header Card */}
         <Card className="*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs">
